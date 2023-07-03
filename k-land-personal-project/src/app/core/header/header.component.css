@@ -2,19 +2,21 @@
   display: flex;
   justify-content: space-between;
   background-color: rgb(47, 40, 77);
+  position: relative;
 }
 
 .nav-bar h1 {
   color: pink;
   margin: 1px;
   font-size: 30px;
-  margin-top: 2px;
+  margin-top: 5px;
   margin-left: 10px;
 }
 
 .nav-bar .nav-search {
   flex: 1;
   display: flex;
+  position: static;
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 5px;
@@ -24,16 +26,23 @@
   flex: 1;
   color: black;
   height: 30px;
-  border-right: none;
-  margin-top: 2px;
+  margin-top: 5px;
   border: 1px solid pink;
+  border-right: none;
+  outline: none;
+  border-radius: 5px;
 }
 
 .nav-bar .nav-search button {
   color: black;
   height: 34px;
-  margin-top: 2px;
-  
+  position: relative;
+  left: -10px;
+  margin-top: 5px;
+  border: 1px solid pink;
+  border-left: none;
+  background-color: pink;
+  border-radius: 5px;
 }
 
 .nav-bar ul {
@@ -42,7 +51,7 @@
   padding: 0;
   list-style-type: none;
   margin-right: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .nav-bar ul li {
