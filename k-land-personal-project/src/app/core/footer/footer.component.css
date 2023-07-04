@@ -1,0 +1,14 @@
+.footer .footer-text {
+    margin-top: -15px;
+    text-align: center;
+    color: pink;
+}
+.footer .about {
+    text-align: center;
+}
+
+.footer a {
+    color: pink;
+    text-decoration: none;
+    font-size: 20px;
+}

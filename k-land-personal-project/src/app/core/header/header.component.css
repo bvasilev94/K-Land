@@ -8,7 +8,7 @@
 .nav-bar .nav-logo a {
   text-decoration: none;
   display: flex;
-  color: pink;
+  color: #ffb7c5;
   margin: 1px;
   font-size: 30px;
   margin-top: 10px;
@@ -29,7 +29,7 @@
   color: black;
   height: 30px;
   margin-top: 5px;
-  border: 1px solid pink;
+  border: 1px solid #ffb7c5;
   border-right: none;
   outline: none;
   border-radius: 5px;
@@ -41,9 +41,9 @@
   position: relative;
   left: -10px;
   margin-top: 5px;
-  border: 1px solid pink;
+  border: 1px solid #ffb7c5;
   border-left: none;
-  background-color: pink;
+  background-color: #ffb7c5;
   border-radius: 5px;
 }
 
@@ -77,6 +77,71 @@
 
 .nav-bar ul span {
   display: flex;
-  color: pink;
+  color: #ffb7c5;
   margin-bottom: 0x;
 }
+
+.dropbtn::after {
+  content: "";
+  position: absolute;
+  bottom: 13px; /* Adjust this value to position the arrow vertically */
+  right: -4px; /* Adjust this value to position the arrow horizontally */
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #ffb7c5; /* Adjust color as needed */
+}
+
+/* Dropdown Button */
+.dropbtn {
+  font-family: cursive;
+  background-color: rgb(47, 40, 77);
+  color: #ffb7c5;
+  padding-left: 15px;
+  padding-top: 0px;
+  padding-bottom: 3px;
+  font-size: 18px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(47, 40, 77);
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: white;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: rgb(47, 40, 77);
+}
+
+
