@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 
 import { MainComponent } from './main/main.component';
 import { CoreModule } from './core/core.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, MainComponent],
+  declarations: [AppComponent, MainComponent, HomeComponent],
   imports: [BrowserModule, AppRoutingModule, CoreModule],
   providers: [],
   bootstrap: [AppComponent],
