@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FeatureModule } from './feature/feature.module';
 
 @NgModule({
   declarations: [AppComponent, MainComponent],
@@ -12,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
+    FeatureModule,
     BrowserAnimationsModule,
   ],
   providers: [],
