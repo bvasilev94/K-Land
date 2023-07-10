@@ -1,33 +1,45 @@
 <div class="main_div">
-    <div class="title">Join us on a new adventure</div>
-    <form #regFrom="ngForm" (ngSubmit)="register(regFrom.value)" action="#">
-      <div class="input_box">
-        <input name="email" type="text" placeholder="Email" required ngModel>
-        <div class="icon"><i class="fas fa-user"></i></div>
+  <div class="title">Join us on a new adventure</div>
+  <form #regFrom="ngForm" (ngSubmit)="register(regFrom.value)" action="#">
+    <div class="input_box">
+      <input name="email" type="text" placeholder="Email" required ngModel />
+      <div class="icon"><i class="fas fa-user"></i></div>
+    </div>
+    <div class="input_box">
+      <input name="username" type="name" placeholder="Name" required ngModel />
+      <div class="icon"><i class="fas fa-lock"></i></div>
+    </div>
+    <div class="input_box">
+      <input
+        name="password"
+        type="password"
+        placeholder="Password"
+        required
+        ngModel
+      />
+      <div class="icon"><i class="fas fa-lock"></i></div>
+    </div>
+    <div class="input_box">
+      <input
+        name="repeatPassword"
+        type="password"
+        placeholder="Repeat Password"
+        required
+        ngModel
+      />
+      <div class="icon"><i class="fas fa-lock"></i></div>
+    </div>
+    <div class="option_div">
+      <div class="check_box">
+        <input type="checkbox" />
+        <span>Want to be a partner ?</span>
       </div>
-      <div class="input_box">
-        <input name="name" type="name" placeholder="Name" required ngModel>
-        <div class="icon"><i class="fas fa-lock"></i></div>
-      </div>
-      <div class="input_box">
-        <input name="password" type="password" placeholder="Password" required ngModel>
-        <div class="icon"><i class="fas fa-lock"></i></div>
-      </div>
-      <div class="input_box">
-        <input name="rePassword" type="password" placeholder="Repeat Password" required ngModel>
-        <div class="icon"><i class="fas fa-lock"></i></div>
-      </div>
-      <div class="option_div">
-        <div class="check_box">
-          <input type="checkbox">
-          <span>Want to be a partner ?</span>
-        </div>
-      </div>
-      <div class="input_box button">
-        <input type="submit" value="Login">
-      </div>
-      <div class="sign_up">
-        Already a member? <a routerLink="../login">Sign in</a>
-      </div>
-    </form>
-  </div>
+    </div>
+    <div class="input_box button">
+      <input type="submit" value="Login" />
+    </div>
+    <div class="sign_up">
+      Already a member? <a routerLink="../login">Sign in</a>
+    </div>
+  </form>
+</div>
