@@ -15,6 +15,10 @@
             <a routerLink="/login">Sing in</a>
             <a routerLink="/register">Register</a>
           </div>
+          <div *ngIf="isSeller" class="dropdown-content">
+            <a routerLink="/profile">Profile</a>
+            <a routerLink="#">Logout</a>
+          </div>
         </li>
         <li><a href="#">Orders</a></li>
         <li>

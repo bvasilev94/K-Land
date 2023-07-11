@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FeatureModule } from './feature/feature.module';
 import { AuthModule } from './auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
+import { CookieModule } from 'ngx-cookie';
 
 @NgModule({
   declarations: [AppComponent, MainComponent],
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     FeatureModule,
     BrowserAnimationsModule,
     AuthModule,
+    CookieModule.withOptions(),
   ],
   providers: [],
   bootstrap: [AppComponent],

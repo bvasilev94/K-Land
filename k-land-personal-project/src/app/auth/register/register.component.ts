@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+
 import { RegisterService } from '../register.service';
 import { RegisterData } from 'src/app/types/User';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +13,8 @@ import { Router } from '@angular/router';
 export class RegisterComponent {
   constructor(
     private registerService: RegisterService,
-    private router: Router
+    private router: Router,
+    private cookies: CookieService
   ) {}
 
   register(data: RegisterData): void {
@@ -19,8 +22,6 @@ export class RegisterComponent {
       data.seller = false;
     }
 
-    this.registerService.userRegister(data).subscribe((result) => {
-      console.log(result);
-    });
+    this.registerService.userRegister(data);
   }
 }
