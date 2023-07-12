@@ -7,7 +7,7 @@ import { RegisterData } from '../types/User';
 @Injectable({
   providedIn: 'root',
 })
-export class RegisterService {
+export class UserService {
   constructor(private http: HttpClient, private router: Router) {}
 
   userRegister(data: RegisterData) {
@@ -22,5 +22,9 @@ export class RegisterService {
         }
         console.log(result.body);
       });
+  }
+
+  userLogout(): void {
+    localStorage.removeItem('user');
   }
 }

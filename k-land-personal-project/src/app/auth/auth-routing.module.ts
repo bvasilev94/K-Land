@@ -7,7 +7,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { userGuard } from './user.guard';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [userGuard] },
 ];

@@ -17,7 +17,7 @@
           </div>
           <div *ngIf="isSeller" class="dropdown-content">
             <a routerLink="/profile">Profile</a>
-            <a routerLink="#">Logout</a>
+            <a (click)="logout()">Logout</a>
           </div>
         </li>
         <li><a href="#">Orders</a></li>

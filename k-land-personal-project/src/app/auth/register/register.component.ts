@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 
-import { RegisterService } from '../register.service';
+import { UserService } from '../user.service';
 import { RegisterData } from 'src/app/types/User';
 
 @Component({
@@ -12,7 +12,7 @@ import { RegisterData } from 'src/app/types/User';
 })
 export class RegisterComponent {
   constructor(
-    private registerService: RegisterService,
+    private userService: UserService,
     private router: Router,
     private cookies: CookieService
   ) {}
@@ -22,6 +22,6 @@ export class RegisterComponent {
       data.seller = false;
     }
 
-    this.registerService.userRegister(data);
+    this.userService.userRegister(data);
   }
 }
