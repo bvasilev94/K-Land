@@ -8,12 +8,14 @@ import { UserService } from 'src/app/auth/user.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   isSeller = localStorage.getItem('user');
 
-  ngOnInit() {}
-
   constructor(private userService: UserService, private router: Router) {}
+
+  get isLoggedIn(): boolean {
+    return this.userService.isLogged();
+  }
 
   logout(): void {
     this.userService.userLogout();

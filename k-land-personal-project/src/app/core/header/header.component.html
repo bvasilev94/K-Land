@@ -11,11 +11,11 @@
       <ul>
         <li class="dropdown">
           <button class="dropbtn">Acount</button>
-          <div class="dropdown-content">
+          <div *ngIf="!isLoggedIn" class="dropdown-content">
             <a routerLink="/login">Sing in</a>
             <a routerLink="/register">Register</a>
           </div>
-          <div *ngIf="isSeller" class="dropdown-content">
+          <div *ngIf="isLoggedIn" class="dropdown-content">
             <a routerLink="/profile">Profile</a>
             <a (click)="logout()">Logout</a>
           </div>

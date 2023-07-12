@@ -10,6 +10,10 @@ import { RegisterData } from '../types/User';
 export class UserService {
   constructor(private http: HttpClient, private router: Router) {}
 
+  isLogged() {
+    return !!localStorage.getItem('user');
+  }
+
   userRegister(data: RegisterData) {
     return this.http
       .post('http://localhost:3030/users/register', data, {
