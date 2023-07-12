@@ -5,3 +5,8 @@ export interface RegisterData {
   repeatPassword: string;
   seller: boolean;
 }
+
+export interface LoginData {
+  email: string;
+  password: string;
+}

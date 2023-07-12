@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { CookieService } from 'ngx-cookie-service';
 
 import { UserService } from '../user.service';
 import { RegisterData } from 'src/app/types/User';
@@ -11,11 +9,7 @@ import { RegisterData } from 'src/app/types/User';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-  constructor(
-    private userService: UserService,
-    private router: Router,
-    private cookies: CookieService
-  ) {}
+  constructor(private userService: UserService) {}
 
   register(data: RegisterData): void {
     if (data.seller !== true) {

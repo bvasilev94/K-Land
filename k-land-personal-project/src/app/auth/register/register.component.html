@@ -1,6 +1,6 @@
 <div class="main_div">
   <div class="title">Join us on a new adventure</div>
-  <form #regFrom="ngForm" (ngSubmit)="register(regFrom.value)" action="#">
+  <form #regForm="ngForm" (ngSubmit)="register(regForm.value)" action="#">
     <div class="input_box">
       <input name="email" type="text" placeholder="Email" required ngModel />
       <div class="icon"><i class="fas fa-user"></i></div>

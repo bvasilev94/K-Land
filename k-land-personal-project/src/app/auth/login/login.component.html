@@ -1,20 +1,20 @@
 <div class="main_div">
   <div class="title">Welcome back</div>
-  <form action="#">
+  <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" action="#">
     <div class="input_box">
-      <input type="text" placeholder="Email or Phone" required>
+      <input name="email" type="text" placeholder="Email" required ngModel>
       <div class="icon"><i class="fas fa-user"></i></div>
     </div>
     <div class="input_box">
-      <input type="password" placeholder="Password" required>
+      <input name="password" type="password" placeholder="Password" required ngModel>
       <div class="icon"><i class="fas fa-lock"></i></div>
     </div>
-    <div class="option_div">
+    <!-- <div class="option_div">
       <div class="check_box">
         <input type="checkbox">
         <span>Remember me</span>
       </div>
-    </div>
+    </div> -->
     <div class="input_box button">
       <input type="submit" value="Login">
     </div>

@@ -9,8 +9,6 @@ import { UserService } from 'src/app/auth/user.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  isSeller = localStorage.getItem('user');
-
   constructor(private userService: UserService, private router: Router) {}
 
   get isLoggedIn(): boolean {

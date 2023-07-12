@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
-import { RegisterData } from '../types/User';
+import { LoginData, RegisterData } from '../types/User';
 
 @Injectable({
   providedIn: 'root',
@@ -17,6 +17,20 @@ export class UserService {
   userRegister(data: RegisterData) {
     return this.http
       .post('http://localhost:3030/users/register', data, {
+        observe: 'response',
+      })
+      .subscribe((result) => {
+        if (typeof result.body == 'object') {
+          localStorage.setItem('user', JSON.stringify(result.body));
+          this.router.navigate(['home']);
+        }
+        console.log(result.body);
+      });
+  }
+
+  userLogin(data: LoginData) {
+    return this.http
+      .post('http://localhost:3030/users/login', data, {
         observe: 'response',
       })
       .subscribe((result) => {
