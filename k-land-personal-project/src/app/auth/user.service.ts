@@ -14,6 +14,10 @@ export class UserService {
     return !!localStorage.getItem('user');
   }
 
+  getUser() {
+    return localStorage.getItem('user');
+  }
+
   userRegister(data: RegisterData) {
     return this.http
       .post('http://localhost:3030/users/register', data, {
@@ -24,7 +28,6 @@ export class UserService {
           localStorage.setItem('user', JSON.stringify(result.body));
           this.router.navigate(['home']);
         }
-        console.log(result.body);
       });
   }
 
@@ -34,11 +37,11 @@ export class UserService {
         observe: 'response',
       })
       .subscribe((result) => {
+        console.log(result);
         if (typeof result.body == 'object') {
           localStorage.setItem('user', JSON.stringify(result.body));
           this.router.navigate(['home']);
         }
-        console.log(result.body);
       });
   }
 

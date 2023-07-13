@@ -15,6 +15,12 @@ export class HeaderComponent {
     return this.userService.isLogged();
   }
 
+  get isSeller() {
+    let data = this.userService.getUser();
+    let user = data && JSON.parse(data);
+    return user.seller;
+  }
+
   logout(): void {
     this.userService.userLogout();
     this.router.navigate(['/']);
