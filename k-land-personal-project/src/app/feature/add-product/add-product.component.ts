@@ -10,6 +10,8 @@ import { GetUser } from 'src/app/types/User';
   styleUrls: ['./add-product.component.css'],
 })
 export class AddProductComponent {
+  addedTrue: string | undefined;
+
   constructor(private productService: ProductService) {}
 
   addProduct(productData: AddProductData) {
@@ -18,11 +20,16 @@ export class AddProductComponent {
     if (user !== null) {
       _ownerId = JSON.parse(user);
       productData._ownerId = _ownerId._id;
-      console.log(_ownerId._id);
     }
 
-    this.productService.addProduct(productData).subscribe((result) => {
-      console.log(result);
+    this.productService.addProduct(productData).subscribe((response) => {
+      if (response.status == 204) {
+        this.addedTrue = 'Product added successfuly';
+      }
+
+      setTimeout(() => {
+        this.addedTrue = undefined;
+      }, 5000);
     });
   }
 }

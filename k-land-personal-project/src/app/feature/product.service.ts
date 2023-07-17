@@ -10,7 +10,8 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   addProduct(productData: AddProductData) {
-    console.log(productData);
-    return this.http.post('http://localhost:3030/data/catalog', productData);
+    return this.http.post('http://localhost:3030/data/catalog', productData, {
+      observe: 'response',
+    });
   }
 }

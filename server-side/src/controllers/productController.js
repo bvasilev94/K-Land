@@ -18,10 +18,10 @@ router.post("/catalog", async (req, res) => {
     const productData = req.body;
     console.log(productData);
     await productService.create(productData);
-    res.status(204).end();
+    res.status(204).json({ message: "Product added successfuly!" });
   } catch (error) {
     res.status(400).json({
-      message: "Cannot create furniture",
+      message: "Cannot add product",
     });
   }
 });

@@ -60,9 +60,11 @@ body {
 .social_icons a:last-child:hover {
   background: #0d8bd9;
 }
+
 form {
   margin-top: 25px;
 }
+
 form .input_box {
   height: 50px;
   width: 100%;
@@ -90,6 +92,15 @@ form .input_box {
   padding-left: 45px;
   font-size: 17px;
   transition: all 0.3s ease;
+}
+
+
+
+.message-p {
+  color: green;
+  border-radius: 5px;
+  font-size: 17px;
+  text-align: center;
 }
 
 .input_box textarea {
