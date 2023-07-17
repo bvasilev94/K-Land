@@ -16,7 +16,6 @@ router.get("/catalog", async (req, res) => {
 router.post("/catalog", async (req, res) => {
   try {
     const productData = req.body;
-    productData._ownerId = req.user._id;
     console.log(productData);
     await productService.create(productData);
     res.status(204).end();

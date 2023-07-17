@@ -69,6 +69,7 @@ form .input_box {
   position: relative;
   margin-top: 15px;
 }
+
 .input_box input {
   height: 100%;
   width: 100%;
@@ -79,9 +80,41 @@ form .input_box {
   font-size: 17px;
   transition: all 0.3s ease;
 }
+
+.input_box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 45px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+
+.input_box textarea {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 45px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+
+.input_box select:focus {
+  border-color: #be2edd;
+}
+
 .input_box input:focus {
   border-color: #be2edd;
 }
+
+.input_box textarea:focus {
+  border-color: #be2edd;
+}
+
 .input_box .icon {
   position: absolute;
   top: 50%;

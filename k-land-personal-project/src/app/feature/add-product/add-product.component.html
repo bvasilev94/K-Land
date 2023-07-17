@@ -1,23 +1,38 @@
 <div class="main_div">
   <div class="title">Add-Product</div>
-  <form action="#">
+  <form #addForm="ngForm" (ngSubmit)="addProduct(addForm.value)" action="#">
     <div class="input_box">
-        <input name="Category" type="text" placeholder="Category" required ngModel />
-        <div class="icon"><i class="fas fa-user"></i></div>
-      </div>
-    <div class="input_box">
-      <input name="productName" type="text" placeholder="Product Name" required ngModel />
+      <!-- <input
+        list="categories"
+        name="category"
+        type="text"
+        placeholder="Category"
+        required
+        ngModel
+      /> -->
+      <select id="category" name="category" required ngModel>
+        <option value="Clothing">Clothing</option>
+        <option value="Accessories">Accessories</option>
+        <option value="Food">Food</option>
+        <option value="Other">Other</option>
+      </select>
       <div class="icon"><i class="fas fa-user"></i></div>
     </div>
     <div class="input_box">
-      <input name="manufacturer" type="text" placeholder="Manufacturer" required ngModel />
-      <div class="icon"><i class="fas fa-lock"></i></div>
+      <input
+        name="name"
+        type="text"
+        placeholder="Product Name"
+        required
+        ngModel
+      />
+      <div class="icon"><i class="fas fa-user"></i></div>
     </div>
     <div class="input_box">
       <input
-        name="year"
+        name="manufacturer"
         type="text"
-        placeholder="Year"
+        placeholder="Product Manufacturer"
         required
         ngModel
       />
@@ -25,9 +40,39 @@
     </div>
     <div class="input_box">
       <input
-        name="Image"
+        name="price"
         type="text"
-        placeholder="Image URL"
+        placeholder="Product Price"
+        required
+        ngModel
+      />
+      <div class="icon"><i class="fas fa-lock"></i></div>
+    </div>
+    <div class="input_box">
+      <input
+        name="year"
+        type="text"
+        placeholder="Product Year"
+        required
+        ngModel
+      />
+      <div class="icon"><i class="fas fa-lock"></i></div>
+    </div>
+    <div class="input_box">
+      <textarea
+        name="description"
+        type="text"
+        placeholder="Product Description"
+        required
+        ngModel
+      ></textarea>
+      <div class="icon"><i class="fas fa-lock"></i></div>
+    </div>
+    <div class="input_box">
+      <input
+        name="imageUrl"
+        type="text"
+        placeholder="Product Image URL"
         required
         ngModel
       />

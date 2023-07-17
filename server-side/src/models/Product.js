@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
-  make: {
+  category: {
     type: String,
     required: true,
   },
-  model: {
+  name: {
     type: String,
     required: true,
   },
-  description: {
+  manufacturer: {
     type: String,
     required: true,
   },
@@ -17,7 +17,15 @@ const productSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  img: {
+  year: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  imageUrl: {
     type: String,
     required: true,
   },
