@@ -3,20 +3,16 @@
     <div class="img-wrap" data-abc="true">
       <img src="{{ product.imageUrl }}" />
     </div>
-    <figcaption class="info-wrap">
+    <div class="info-wrap">
       <div class="row">
         <div class="col-md-9 col-xs-9">
-          <div class="title" data-abc="true">{{ product.name }}</div>
-          <span class="rated">{{ product.category }}</span>
-        </div>
-        <div class="col-md-3 col-xs-3">
-          <div class="rating text-right">
-            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-          </div>
+          <div class="title" data-abc="true">Name: {{ product.name }}</div>
+          <div class="title" data-abc="true">Year: {{ product.year }}</div>
+          <div class="title" data-abc="true">Category: {{ product.category }}</div>
+          <span class="rated">Description: {{ product.description }}</span>
         </div>
       </div>
-    </figcaption>
+    </div>
     <div class="bottom-wrap-payment">
       <figcaption class="info-wrap">
         <div class="row">
