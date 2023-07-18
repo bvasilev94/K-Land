@@ -18,6 +18,7 @@
           <div *ngIf="isLoggedIn" class="dropdown-content">
             <a routerLink="/profile">Profile</a>
             <a *ngIf="isSeller" routerLink="/add-product">Add Product</a>
+            <a *ngIf="isSeller" routerLink="/my-products">My Products</a>
             <a (click)="logout()">Logout</a>
           </div>
         </li>

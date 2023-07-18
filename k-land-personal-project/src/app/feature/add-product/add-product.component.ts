@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { ProductService } from '../product.service';
 import { AddProductData } from 'src/app/types/Product';
 import { GetUser } from 'src/app/types/User';
+import { UserService } from 'src/app/auth/user.service';
 
 @Component({
   selector: 'app-add-product',
@@ -12,15 +13,13 @@ import { GetUser } from 'src/app/types/User';
 export class AddProductComponent {
   addedTrue: string | undefined;
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private userService: UserService
+  ) {}
 
   addProduct(productData: AddProductData) {
-    let _ownerId: GetUser;
-    let user = localStorage.getItem('user');
-    if (user !== null) {
-      _ownerId = JSON.parse(user);
-      productData._ownerId = _ownerId._id;
-    }
+    productData._ownerId = this.userService.getUserId();
 
     this.productService.addProduct(productData).subscribe((response) => {
       if (response.status == 204) {

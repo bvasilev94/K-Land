@@ -4,11 +4,13 @@ const productService = require("../services/productService.js");
 
 router.get("/catalog", async (req, res) => {
   try {
-    const furnitures = await productService.getAll(req.query);
-    res.json(furnitures);
+    const ownerId = req.body.ownerId;
+    console.log(ownerId);
+    const products = await productService.getAll(ownerId);
+    res.json(products);
   } catch (error) {
     res.status(400).json({
-      message: "Cannot load furnitures",
+      message: "Oops something went wrong",
     });
   }
 });

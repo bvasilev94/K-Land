@@ -7,9 +7,10 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { FeatureRoutingModule } from './feature-routing.module';
+import { MyProductsSellerComponent } from './my-products-seller/my-products-seller.component';
 
 @NgModule({
-  declarations: [HomeComponent, AddProductComponent],
+  declarations: [HomeComponent, AddProductComponent, MyProductsSellerComponent],
   imports: [CommonModule, RouterModule, FeatureRoutingModule, FormsModule],
   exports: [HomeComponent, AddProductComponent],
 })
