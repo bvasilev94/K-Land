@@ -21,10 +21,21 @@
       </figcaption>
     </div>
     <div class="bottom-wrap">
-      <a href="#" class="btn-edit" data-abc="true">
+      <a
+        [routerLink]="['/my-products', product._id, 'edit']"
+        class="btn-edit"
+        data-abc="true"
+      >
         Edit
       </a>
-      <a href="javascript:void(0)" (click)="deleteProductBtn(product._id)" class="btn-delete" data-abc="true"> Delete </a>
+      <a
+        href="javascript:void(0)"
+        (click)="deleteProductBtn(product._id)"
+        class="btn-delete"
+        data-abc="true"
+      >
+        Delete
+      </a>
     </div>
   </div>
 </div>
