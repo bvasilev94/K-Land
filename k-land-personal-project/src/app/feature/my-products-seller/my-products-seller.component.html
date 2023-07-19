@@ -7,9 +7,7 @@
       <div class="row">
         <div class="col-md-9 col-xs-9">
           <div class="title" data-abc="true">Name: {{ product.name }}</div>
-          <div class="title" data-abc="true">Year: {{ product.year }}</div>
-          <div class="title" data-abc="true">Category: {{ product.category }}</div>
-          <span class="rated">Description: {{ product.description }}</span>
+          <span class="rated">Category: {{ product.category }}</span>
         </div>
       </div>
     </div>
@@ -26,7 +24,7 @@
       <a href="#" class="btn-edit" data-abc="true">
         Edit
       </a>
-      <a href="#" class="btn-delete" data-abc="true"> Delete </a>
+      <a href="javascript:void(0)" (click)="deleteProductBtn(product._id)" class="btn-delete" data-abc="true"> Delete </a>
     </div>
   </div>
 </div>

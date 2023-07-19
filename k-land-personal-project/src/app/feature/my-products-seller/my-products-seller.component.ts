@@ -17,16 +17,27 @@ export class MyProductsSellerComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.showProducts();
+  }
+
+  sortProducts(products: AddProductData[]) {
+    const userId = this.userService.getUserId();
+    return products.filter((product) => product._ownerId === userId);
+  }
+
+  deleteProductBtn(productId: string) {
+    this.productService.deleteProduct(productId).subscribe((result) => {
+      console.log(result);
+      this.showProducts();
+    });
+  }
+
+  showProducts() {
     this.productService.getProducts().subscribe((result) => {
       if (result) {
         this.products = result;
         this.products = this.sortProducts(result);
       }
     });
-  }
-
-  sortProducts(products: AddProductData[]) {
-    const userId = this.userService.getUserId();
-    return products.filter((product) => product._ownerId === userId);
   }
 }

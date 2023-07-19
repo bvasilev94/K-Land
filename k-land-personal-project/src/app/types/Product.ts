@@ -1,4 +1,5 @@
 export interface AddProductData {
+  _id: string;
   category: string;
   description: string;
   imageUrl: string;
