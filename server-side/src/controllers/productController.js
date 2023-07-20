@@ -4,9 +4,9 @@ const productService = require("../services/productService.js");
 
 router.get("/catalog", async (req, res) => {
   try {
+    const qsLimit = req.query.limit
     const ownerId = req.body.ownerId;
-    console.log(ownerId);
-    const products = await productService.getAll(ownerId);
+    const products = await productService.getAll(ownerId, qsLimit);
     res.json(products);
   } catch (error) {
     res.status(400).json({
@@ -18,7 +18,6 @@ router.get("/catalog", async (req, res) => {
 router.post("/catalog", async (req, res) => {
   try {
     const productData = req.body;
-    console.log(productData);
     await productService.create(productData);
     res.status(204).json({ message: "Product added successfuly!" });
   } catch (error) {
