@@ -2,7 +2,7 @@
   <div class="title">Update Product</div>
   <form #addForm="ngForm" action="#">
     <div class="input_box">
-      <select id="category" name="category" required ngModel>
+      <select id="category" name="category" required ngModel="{{productData?.category}}">
         <option value="Clothing">Clothing</option>
         <option value="Accessories">Accessories</option>
         <option value="Food">Food</option>
@@ -16,7 +16,7 @@
         type="text"
         placeholder="Product Name"
         required
-        ngModel
+        ngModel="{{productData?.name}}"
       />
       <div class="icon"><i class="fas fa-user"></i></div>
     </div>
@@ -26,7 +26,7 @@
         type="text"
         placeholder="Product Manufacturer"
         required
-        ngModel
+        ngModel="{{productData?.manufacturer}}"
       />
       <div class="icon"><i class="fas fa-lock"></i></div>
     </div>
@@ -36,7 +36,7 @@
         type="text"
         placeholder="Product Price"
         required
-        ngModel
+        ngModel="{{productData?.price}}"
       />
       <div class="icon"><i class="fas fa-lock"></i></div>
     </div>
@@ -46,7 +46,7 @@
         type="text"
         placeholder="Product Year"
         required
-        ngModel
+        ngModel="{{productData?.year}}"
       />
       <div class="icon"><i class="fas fa-lock"></i></div>
     </div>
@@ -56,7 +56,7 @@
         type="text"
         placeholder="Product Description"
         required
-        ngModel
+        ngModel="{{productData?.description}}"
       ></textarea>
       <div class="icon"><i class="fas fa-lock"></i></div>
     </div>
@@ -66,7 +66,7 @@
         type="text"
         placeholder="Product Image URL"
         required
-        ngModel
+        ngModel="{{productData?.imageUrl}}"
       />
       <div class="icon"><i class="fas fa-lock"></i></div>
     </div>

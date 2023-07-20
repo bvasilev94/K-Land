@@ -27,7 +27,6 @@ export class MyProductsSellerComponent implements OnInit {
 
   deleteProductBtn(productId: string) {
     this.productService.deleteProduct(productId).subscribe((result) => {
-      console.log(result);
       this.showProducts();
     });
   }
