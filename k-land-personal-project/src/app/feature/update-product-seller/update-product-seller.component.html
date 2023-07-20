@@ -1,6 +1,7 @@
 <div class="main_div">
   <div class="title">Update Product</div>
-  <form #addForm="ngForm" action="#">
+  <p class="message-p">{{ updatedTrue }}</p>
+  <form #updateForm="ngForm" (ngSubmit)="updateProduct(updateForm.value, productData?._id)" action="#">
     <div class="input_box">
       <select id="category" name="category" required ngModel="{{productData?.category}}">
         <option value="Clothing">Clothing</option>

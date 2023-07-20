@@ -30,4 +30,10 @@ export class ProductService {
       observe: 'response',
     });
   }
+
+  updateProduct(productData: AddProductData, productId: string | undefined) {
+    return this.http.put(`${this.url}/${productId}`, productData, {
+      observe: 'response',
+    });
+  }
 }

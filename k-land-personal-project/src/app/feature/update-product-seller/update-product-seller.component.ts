@@ -10,6 +10,7 @@ import { AddProductData } from 'src/app/types/Product';
 })
 export class UpdateProductSellerComponent implements OnInit {
   productData: undefined | AddProductData;
+  updatedTrue: string | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,6 +24,23 @@ export class UpdateProductSellerComponent implements OnInit {
         if (response.statusText === 'OK' && response.body) {
           this.productData = response.body;
         }
+      });
+  }
+
+  updateProduct(
+    updatedProductData: AddProductData,
+    productId: string | undefined
+  ) {
+    this.productService
+      .updateProduct(updatedProductData, productId)
+      .subscribe((respons) => {
+        if (respons.status === 204) {
+          this.updatedTrue = 'Product updated successfuly';
+        }
+
+        setTimeout(() => {
+          this.updatedTrue = undefined;
+        }, 5000);
       });
   }
 }
