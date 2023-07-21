@@ -36,4 +36,9 @@ export class ProductService {
       observe: 'response',
     });
   }
+  
+
+  getLastProducts() {
+    return this.http.get<AddProductData[]>(`${this.url}?limit=3`);
+  }
 }

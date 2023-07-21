@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { CookieModule } from 'ngx-cookie';
 
 import { MainComponent } from './main/main.component';
 import { CoreModule } from './core/core.module';
@@ -21,7 +20,6 @@ import { AuthModule } from './auth/auth.module';
     FeatureModule,
     BrowserAnimationsModule,
     AuthModule,
-    CookieModule.withOptions(),
   ],
   providers: [],
   bootstrap: [AppComponent],

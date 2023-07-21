@@ -1,6 +1,13 @@
 a {
   text-decoration: none !important;
 }
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+}
+
 .card-product-list,
 .card-product-grid {
   margin-bottom: 0;
@@ -13,8 +20,6 @@ a {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  display: inline-block;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { AddProductComponent } from './add-product/add-product.component';
 import { MyProductsSellerComponent } from './my-products-seller/my-products-seller.component';
 import { UpdateProductSellerComponent } from './update-product-seller/update-product-seller.component';
@@ -17,7 +18,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class FeatureRoutingModule {}
