@@ -1,1 +1,25 @@
-<p>does it work tho!</p>
+<div class="carousel-container">
+  <div class="carousel-slide" #carouselSlide>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg"
+      alt="Image 1"
+    />
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg"
+      alt="Image 2"
+    />
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg"
+      alt="Image 3"
+    />
+  </div>
+  <div class="position-indicator">
+    <div
+      class="position-dot"
+      *ngFor="let dot of positionDots"
+      [class.active]="dot === currentIndex"
+    ></div>
+    <button class="arrow left" (click)="prevSlide()">&#10094;</button>
+    <button class="arrow right" (click)="nextSlide()">&#10095;</button>
+  </div>
+</div>

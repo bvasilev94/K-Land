@@ -1,0 +1,59 @@
+.carousel-container {
+  position: relative; /* Set the container to be a reference for the position indicator */
+  width: 100%;
+  max-width: 600px; /* Set the width of the carousel here */
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.carousel-slide {
+  display: flex;
+  width: 300%; /* Set the width of the slide container to accommodate all images */
+  animation: carouselAnimation 10s infinite; /* Adjust animation duration as needed */
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 200px; /* Set the height of the images (adjust as needed) */
+  object-fit: cover;
+}
+
+.position-indicator {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.position-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #bbb;
+  margin: 0 5px;
+}
+
+.position-dot.active {
+  background-color: #555;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #555;
+  cursor: pointer;
+  transform: translateY(-50%); /* Vertically center the arrows */
+}
+
+.arrow.left {
+  right: 200%; /* Move the left arrow to the far left */
+}
+
+.arrow.right {
+  left: 200%; /* Move the right arrow to the far right */
+}
