@@ -36,4 +36,24 @@
       direction="next"
     ></c-carousel-control>
   </c-carousel>
+  <div class="product-list-wrapper">
+    <h1>All Products</h1>
+    <div class="row">
+      <div class="cards-wrapper">
+        <div *ngFor="let product of products" class="prodcut-card">
+          <img class="product-image" src="{{product.imageUrl}}" alt="">
+          <div class="product-details">
+            <h6 class="name-head">{{product.name}}</h6>
+          </div>
+          <div class="product-price">
+            <h6 class>{{product.price}}</h6>
+          </div>
+          <div class="product-footer">
+            <button>View Details</button>
+            <button>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
