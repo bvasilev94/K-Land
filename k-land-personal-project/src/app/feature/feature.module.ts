@@ -9,6 +9,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { FeatureRoutingModule } from './feature-routing.module';
 import { MyProductsSellerComponent } from './my-products-seller/my-products-seller.component';
 import { UpdateProductSellerComponent } from './update-product-seller/update-product-seller.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { UpdateProductSellerComponent } from './update-product-seller/update-pro
     AddProductComponent,
     MyProductsSellerComponent,
     UpdateProductSellerComponent,
+    SearchResultComponent,
   ],
   imports: [
     CommonModule,

@@ -4,11 +4,20 @@
       <a routerLink="home">J-Land</a>
     </div>
     <div class="nav-search">
-      <input (keyup)="searchProduct($event)" (blur)="hideSearchSuggestion()" type="text" placeholder="What are you looking for ?" />
-      <button class="search-btn"></button>
+      <input
+        #searchInput
+        (keyup)="searchProduct($event)"
+        (blur)="hideSearchSuggestion()"
+        type="text"
+        placeholder="What are you looking for ?"
+      />
+      <button (click)="submitSearch(searchInput.value)" class="search-btn"></button>
       <ul *ngIf="mathchingProducts" class="suggested-products">
-        <li class="search-result-suggest" *ngFor="let products of mathchingProducts">
-          <a>{{products.name}}</a>
+        <li
+          class="search-result-suggest"
+          *ngFor="let products of mathchingProducts"
+        >
+          <a>{{ products.name }}</a>
         </li>
       </ul>
     </div>

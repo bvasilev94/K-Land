@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { timeInterval } from 'rxjs';
 
 import { UserService } from 'src/app/auth/user.service';
 import { ProductService } from 'src/app/feature/product.service';
@@ -31,10 +32,17 @@ export class HeaderComponent implements OnInit {
       const element = query.target as HTMLInputElement;
       console.log(element.value);
       if (this.allProducts) {
-        this.mathchingProducts = this.allProducts.filter((product) =>
-          product.name
-            .toLocaleLowerCase()
-            .includes(element.value.toLocaleLowerCase())
+        this.mathchingProducts = this.allProducts.filter(
+          (product) =>
+            product.name
+              .toLocaleLowerCase()
+              .includes(element.value.toLocaleLowerCase()) ||
+            product.category
+              .toLocaleLowerCase()
+              .includes(element.value.toLocaleLowerCase()) ||
+            product.manufacturer
+              .toLocaleLowerCase()
+              .includes(element.value.toLocaleLowerCase())
         );
         if (this.mathchingProducts.length > 5) {
           this.mathchingProducts.length = 5;
@@ -45,6 +53,10 @@ export class HeaderComponent implements OnInit {
 
   hideSearchSuggestion() {
     this.mathchingProducts = undefined;
+  }
+
+  submitSearch(searchValue: string) {
+    this.router.navigate([`search/${searchValue}`]);
   }
 
   get isLoggedIn(): boolean {
