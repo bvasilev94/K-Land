@@ -69,7 +69,7 @@
 }
 
 .nav-bar ul li {
-  display: inline-block;
+  display: block;
   padding-left: 15px;
   padding-top: 15px;
   font-size: 17px;
@@ -153,4 +153,28 @@
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   background-color: #301e54;
+}
+
+.suggested-products {
+  padding: 0 !important;
+  margin: 0;
+  position: absolute;
+  top: 40px;
+  z-index: 10;
+  float: left !important;
+  border: 1px solid #ffb7c5;
+  border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 300px;
+  background-color: #301e54;
+}
+
+.suggested-products li {
+  list-style: none;
+  border-bottom: 1px solid #ffb7c5;
+  padding-left: 15px !important;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 15px !important;
 }

@@ -4,12 +4,17 @@
       <a routerLink="home">J-Land</a>
     </div>
     <div class="nav-search">
-      <input type="text" placeholder="What are you looking for ?" />
+      <input (keyup)="searchProduct($event)" (blur)="hideSearchSuggestion()" type="text" placeholder="What are you looking for ?" />
       <button class="search-btn"></button>
+      <ul *ngIf="mathchingProducts" class="suggested-products">
+        <li class="search-result-suggest" *ngFor="let products of mathchingProducts">
+          <a>{{products.name}}</a>
+        </li>
+      </ul>
     </div>
     <div class="nav-menu">
-      <ul>
-        <li class="dropdown">
+      <ul class="user-menu">
+        <li class="user-buttons" class="dropdown">
           <button class="dropbtn">Acount</button>
           <div *ngIf="!isLoggedIn" class="dropdown-content">
             <a routerLink="/login">Sing in</a>
