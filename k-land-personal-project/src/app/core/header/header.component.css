@@ -92,6 +92,10 @@
   margin-bottom: 0x;
 }
 
+.logout-btn {
+  cursor: pointer;
+}
+
 .dropbtn::after {
   content: "";
   position: absolute;

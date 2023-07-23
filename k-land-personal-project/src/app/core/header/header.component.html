@@ -6,18 +6,28 @@
     <div class="nav-search">
       <input
         #searchInput
-        (keyup)="searchProduct($event)"
         (blur)="hideSearchSuggestion()"
+        (keyup)="searchProduct($event)"
         type="text"
         placeholder="What are you looking for ?"
       />
-      <button (click)="submitSearch(searchInput.value)" class="search-btn"></button>
-      <ul *ngIf="mathchingProducts" class="suggested-products">
+      <button
+        (click)="submitSearch(searchInput.value)"
+        class="search-btn"
+      ></button>
+      <ul
+        
+        *ngIf="mathchingProducts"
+        class="suggested-products"
+      >
         <li
+          (click)="populateSearch(products.name)"
           class="search-result-suggest"
           *ngFor="let products of mathchingProducts"
         >
-          <a>{{ products.name }}</a>
+          <a>
+            {{ products.name }}
+          </a>
         </li>
       </ul>
     </div>
@@ -33,7 +43,7 @@
             <a routerLink="/profile">Profile</a>
             <a *ngIf="isSeller" routerLink="/add-product">Add Product</a>
             <a *ngIf="isSeller" routerLink="/my-products">My Products</a>
-            <a (click)="logout()">Logout</a>
+            <a class="logout-btn" (click)="logout()">Logout</a>
           </div>
         </li>
         <li><a href="#">Orders</a></li>

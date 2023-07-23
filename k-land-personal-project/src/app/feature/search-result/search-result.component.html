@@ -1,1 +1,40 @@
-<p>search-result works!</p>
+<h6 class="card-title">This is what we found</h6>
+<div class="product-container">
+  <div
+    *ngFor="let product of foundProducts"
+    class="card card-product-grid card-lg"
+  >
+    <div class="img-wrap" data-abc="true">
+      <img src="{{ product.imageUrl }}" />
+    </div>
+    <div class="info-wrap">
+      <div class="row">
+        <div class="col-md-9 col-xs-9">
+          <div class="title" data-abc="true">Name: {{ product.name }}</div>
+          <span class="rated">Category: {{ product.category }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-wrap-payment">
+      <figcaption class="info-wrap">
+        <div class="row">
+          <div class="col-md-9 col-xs-9">
+            <div class="title" data-abc="true">Price: ${{ product.price }}</div>
+          </div>
+        </div>
+      </figcaption>
+    </div>
+    <div class="bottom-wrap">
+      <a
+        [routerLink]="['/my-products', product._id, 'edit']"
+        class="btn-edit"
+        data-abc="true"
+      >
+        Details
+      </a>
+      <a href="javascript:void(0)" class="btn-delete" data-abc="true">
+        Add to Cart
+      </a>
+    </div>
+  </div>
+</div>

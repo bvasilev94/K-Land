@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+
+import { ProductService } from '../product.service';
+import { AddProductData } from 'src/app/types/Product';
 
 @Component({
   selector: 'app-search-result',
@@ -7,9 +10,42 @@ import { Router } from '@angular/router';
   styleUrls: ['./search-result.component.css'],
 })
 export class SearchResultComponent implements OnInit {
-  constructor(private router: Router) {}
+  allProducts: AddProductData[] | undefined;
+  foundProducts: AddProductData[] | undefined;
+
+  constructor(
+    private activeRoute: ActivatedRoute,
+    private productService: ProductService
+  ) {
+    this.activeRoute.paramMap.subscribe((params) => {
+      this.ngOnInit();
+    });
+  }
 
   ngOnInit(): void {
-    console.log(this.router.getCurrentNavigation()?.extras.state);
+    let query = this.activeRoute.snapshot.paramMap.get('query');
+
+    this.productService.getProducts().subscribe((result) => {
+      this.allProducts = result;
+
+      if (this.allProducts) {
+        this.foundProducts = this.allProducts?.filter((product) => {
+          if (query) {
+            return (
+              product.name
+                .toLocaleLowerCase()
+                .includes(query.toLocaleLowerCase()) ||
+              product.category
+                .toLocaleLowerCase()
+                .includes(query.toLocaleLowerCase()) ||
+              product.manufacturer
+                .toLocaleLowerCase()
+                .includes(query.toLocaleLowerCase())
+            );
+          }
+          return;
+        });
+      }
+    });
   }
 }

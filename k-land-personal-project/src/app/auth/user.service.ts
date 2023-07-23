@@ -47,7 +47,6 @@ export class UserService {
         observe: 'response',
       })
       .subscribe((result) => {
-        console.log(result);
         if (typeof result.body == 'object') {
           localStorage.setItem('user', JSON.stringify(result.body));
           this.router.navigate(['home']);
