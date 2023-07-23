@@ -9,12 +9,17 @@ import { AddProductData } from 'src/app/types/Product';
 })
 export class HomeComponent implements OnInit {
   products: AddProductData[] | undefined;
+  allProducts: AddProductData[] | undefined;
 
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
     this.productService.getLastProducts().subscribe((data) => {
       this.products = data;
+    });
+
+    this.productService.getProducts().subscribe((data) => {
+      this.allProducts = data;
     });
   }
 }
