@@ -10,6 +10,7 @@ import { FeatureRoutingModule } from './feature-routing.module';
 import { MyProductsSellerComponent } from './my-products-seller/my-products-seller.component';
 import { UpdateProductSellerComponent } from './update-product-seller/update-product-seller.component';
 import { SearchResultComponent } from './search-result/search-result.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SearchResultComponent } from './search-result/search-result.component';
     MyProductsSellerComponent,
     UpdateProductSellerComponent,
     SearchResultComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,25 @@
+<div class="product-details" *ngIf="productData">
+  <img src="{{ productData.imageUrl }}" alt="Product Image" />
+  <div class="product-info">
+    <h2>{{ productData.name }}</h2>
+    <h2>Description</h2>
+    <p>
+      {{ productData.description }}
+    </p>
+    <h2>Price</h2>
+    <p>${{ productData.price }}</p>
+    <h2>Brand</h2>
+    <p>{{ productData.manufacturer }}</p>
+    <h2>Category</h2>
+    <p>{{ productData.category }}</p>
+    <div class="quantity">
+      <button class="minus-btn">-</button>
+      <input type="number" min="1" value="1" />
+      <button class="plus-btn">+</button>
+    </div>
+    <div class="action-btns">
+      <button class="add-to-cart">Add to Cart</button>
+      <button class="buy">Buy</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProductService } from '../product.service';
+import { AddProductData } from 'src/app/types/Product';
+
+@Component({
+  selector: 'app-product-details',
+  templateUrl: './product-details.component.html',
+  styleUrls: ['./product-details.component.css'],
+})
+export class ProductDetailsComponent implements OnInit {
+  productData: undefined | AddProductData
+
+
+  constructor(
+    private activeRoute: ActivatedRoute,
+    private productService: ProductService
+  ) {}
+
+  ngOnInit(): void {
+    let productId = this.activeRoute.snapshot.paramMap.get('productId');
+
+    productId &&
+      this.productService.getSingleProduct(productId).subscribe((result) => {
+        if (result.body) {
+          this.productData = result.body;
+        }
+      });
+  }
+}

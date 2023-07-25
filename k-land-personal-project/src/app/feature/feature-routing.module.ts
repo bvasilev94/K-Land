@@ -5,6 +5,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { MyProductsSellerComponent } from './my-products-seller/my-products-seller.component';
 import { UpdateProductSellerComponent } from './update-product-seller/update-product-seller.component';
 import { SearchResultComponent } from './search-result/search-result.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 const routes: Routes = [
   { path: 'add-product', component: AddProductComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
     path: 'my-products/:id/edit',
     component: UpdateProductSellerComponent,
   },
-  {path: 'search/:query', component: SearchResultComponent}
+  { path: 'search/:query', component: SearchResultComponent },
+  { path: 'details/:productId', component: ProductDetailsComponent},
 ];
 
 @NgModule({
