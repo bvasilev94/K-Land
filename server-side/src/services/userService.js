@@ -10,9 +10,9 @@ exports.register = async (userData) => {
     return result;
   } catch (err) {
     if (err.code == 11000) {
-      return err.message = 'Email or Username already taken!';
+      throw new Error("Email or Username already taken!");
     } else {
-      return err.message;
+      throw new Error(err.message);
     }
   }
 };

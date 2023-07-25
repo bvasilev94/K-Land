@@ -42,16 +42,9 @@ export class UserService {
   }
 
   userLogin(data: LoginData) {
-    return this.http
-      .post('http://localhost:3030/users/login', data, {
-        observe: 'response',
-      })
-      .subscribe((result) => {
-        if (typeof result.body == 'object') {
-          localStorage.setItem('user', JSON.stringify(result.body));
-          this.router.navigate(['home']);
-        }
-      });
+    return this.http.post('http://localhost:3030/users/login', data, {
+      observe: 'response',
+    });
   }
 
   userLogout(): void {

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { LoginData } from 'src/app/types/User';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,9 +10,24 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(private userService: UserService) {}
+  errorMessage: undefined | string;
+
+  constructor(private userService: UserService, private router: Router) {}
 
   login(data: LoginData): void {
-    this.userService.userLogin(data);
+    this.userService.userLogin(data).subscribe(
+      (result) => {
+        console.log(result);
+
+        if (typeof result.body == 'object') {
+          localStorage.setItem('user', JSON.stringify(result.body));
+          this.router.navigate(['home']);
+        }
+      },
+      (error) => {
+        this.errorMessage = error.error.message;
+      }
+    );
   }
+  
 }

@@ -2,11 +2,33 @@
   <div class="title">Welcome back</div>
   <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" action="#">
     <div class="input_box">
-      <input name="email" type="text" placeholder="Email" required ngModel>
+      <input
+        name="email"
+        type="text"
+        placeholder="Email"
+        #email="ngModel"
+        required
+        ngModel
+      />
+      <p class="input-error">
+        <span *ngIf="email.invalid && email.touched">Please enter email !</span>
+      </p>
       <div class="icon"><i class="fas fa-user"></i></div>
     </div>
     <div class="input_box">
-      <input name="password" type="password" placeholder="Password" required ngModel>
+      <input
+        name="password"
+        type="password"
+        placeholder="Password"
+        #password="ngModel"
+        required
+        ngModel
+      />
+      <p class="input-error">
+        <span *ngIf="password.invalid && password.touched"
+          >Please enter password !</span
+        >
+      </p>
       <div class="icon"><i class="fas fa-lock"></i></div>
     </div>
     <!-- <div class="option_div">
@@ -15,8 +37,11 @@
         <span>Remember me</span>
       </div>
     </div> -->
+    <h1 class="res-error" *ngIf="errorMessage">
+      <span>{{ errorMessage }}</span>
+    </h1>
     <div class="input_box button">
-      <input type="submit" value="Login">
+      <input type="submit" value="Login" />
     </div>
     <div class="sign_up">
       Not a member? <a routerLink="../register">Signup now</a>

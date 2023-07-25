@@ -4,14 +4,13 @@ const userSevrice = require("../services/userService.js");
 
 router.post("/register", async (req, res) => {
   try {
-    console.log(req.body);
     const result = await userSevrice.register(req.body);
 
     res.json(result);
-    res.end();
+    console.log(req.body);
   } catch (error) {
     console.log(error);
-    console.log(res.status(400).json({ message: error.message }));
+    res.status(400).json({ message: error.message });
   }
 });
 
