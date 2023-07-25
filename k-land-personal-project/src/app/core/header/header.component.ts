@@ -50,9 +50,7 @@ export class HeaderComponent implements OnInit {
   }
 
   hideSearchSuggestion() {
-    setTimeout(() => {
-      this.mathchingProducts = undefined;
-    }, 200);
+    this.mathchingProducts = undefined;
   }
 
   submitSearch(searchValue: string) {

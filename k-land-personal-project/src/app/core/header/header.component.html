@@ -21,7 +21,7 @@
         class="suggested-products"
       >
         <li
-          (click)="populateSearch(products.name)"
+          (mousedown)="populateSearch(products.name)"
           class="search-result-suggest"
           *ngFor="let products of mathchingProducts"
         >

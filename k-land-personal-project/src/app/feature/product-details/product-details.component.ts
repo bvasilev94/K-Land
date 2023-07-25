@@ -9,8 +9,8 @@ import { AddProductData } from 'src/app/types/Product';
   styleUrls: ['./product-details.component.css'],
 })
 export class ProductDetailsComponent implements OnInit {
-  productData: undefined | AddProductData
-
+  productData: undefined | AddProductData;
+  productQuantity: number = 1;
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -26,5 +26,13 @@ export class ProductDetailsComponent implements OnInit {
           this.productData = result.body;
         }
       });
+  }
+
+  handleQtyClick(value: string) {
+    if (value === 'plus') {
+      this.productQuantity += 1;
+    } else if (this.productQuantity > 1 && value === 'minus') {
+      this.productQuantity -= 1;
+    }
   }
 }

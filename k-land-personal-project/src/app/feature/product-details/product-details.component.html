@@ -13,9 +13,9 @@
     <h2>Category</h2>
     <p>{{ productData.category }}</p>
     <div class="quantity">
-      <button class="minus-btn">-</button>
-      <input type="number" min="1" value="1" />
-      <button class="plus-btn">+</button>
+      <button (click)="handleQtyClick('minus')" class="minus-btn">-</button>
+      <input disabled type="number" min="1" value="{{productQuantity}}" />
+      <button (click)="handleQtyClick('plus')" class="plus-btn">+</button>
     </div>
     <div class="action-btns">
       <button class="add-to-cart">Add to Cart</button>
