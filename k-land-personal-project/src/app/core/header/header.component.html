@@ -15,11 +15,7 @@
         (click)="submitSearch(searchInput.value)"
         class="search-btn"
       ></button>
-      <ul
-        
-        *ngIf="mathchingProducts"
-        class="suggested-products"
-      >
+      <ul *ngIf="mathchingProducts" class="suggested-products">
         <li
           (mousedown)="populateSearch(products.name)"
           class="search-result-suggest"
@@ -54,7 +50,7 @@
               alt="Cart"
           /></a>
         </li>
-        <span>0</span>
+        <span>{{ cartItems }}</span>
       </ul>
     </div>
   </nav>

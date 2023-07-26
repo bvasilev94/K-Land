@@ -13,6 +13,7 @@ import { AddProductData } from 'src/app/types/Product';
 export class HeaderComponent implements OnInit {
   allProducts: AddProductData[] | undefined;
   mathchingProducts: AddProductData[] | undefined;
+  cartItems: number = 0;
 
   constructor(
     private userService: UserService,
@@ -24,6 +25,15 @@ export class HeaderComponent implements OnInit {
     this.productService.getProducts().subscribe((data) => {
       this.allProducts = data;
     });
+
+    let cartData = localStorage.getItem('cart');
+    if (cartData) {
+      this.cartItems = JSON.parse(cartData).length;
+    }
+
+    this.productService.cartEmmiter.subscribe((items) => {
+      this.cartItems = items.length
+    })
   }
 
   searchProduct(query: KeyboardEvent) {
