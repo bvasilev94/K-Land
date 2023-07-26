@@ -7,5 +7,6 @@ export interface AddProductData {
   name: string;
   price: number;
   year: string;
+  quantity: undefined | number
   _ownerId: string;
 }

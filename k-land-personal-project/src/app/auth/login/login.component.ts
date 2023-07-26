@@ -17,8 +17,6 @@ export class LoginComponent {
   login(data: LoginData): void {
     this.userService.userLogin(data).subscribe({
       next: (result) => {
-        console.log(result);
-
         if (typeof result.body == 'object') {
           localStorage.setItem('user', JSON.stringify(result.body));
           this.router.navigate(['home']);

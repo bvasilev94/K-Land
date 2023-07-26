@@ -35,4 +35,14 @@ export class ProductDetailsComponent implements OnInit {
       this.productQuantity -= 1;
     }
   }
+
+  addToCart() {
+    if (this.productData) {
+      if (localStorage.getItem('user')) {
+      } else {
+        this.productData.quantity = this.productQuantity;
+        this.productService.addToCart(this.productData);
+      }
+    }
+  }
 }
