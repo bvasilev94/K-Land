@@ -15,8 +15,8 @@ export class LoginComponent {
   constructor(private userService: UserService, private router: Router) {}
 
   login(data: LoginData): void {
-    this.userService.userLogin(data).subscribe(
-      (result) => {
+    this.userService.userLogin(data).subscribe({
+      next: (result) => {
         console.log(result);
 
         if (typeof result.body == 'object') {
@@ -24,10 +24,9 @@ export class LoginComponent {
           this.router.navigate(['home']);
         }
       },
-      (error) => {
+      error: (error) => {
         this.errorMessage = error.error.message;
-      }
-    );
+      },
+    });
   }
-  
 }

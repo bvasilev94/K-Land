@@ -2,32 +2,63 @@
   <div class="title">Join us on a new adventure</div>
   <form #regForm="ngForm" (ngSubmit)="register(regForm.value)" action="#">
     <div class="input_box">
-      <input name="email" type="text" placeholder="Email" required ngModel />
+      <input
+        name="email"
+        type="text"
+        placeholder="Email"
+        #email="ngModel"
+        required
+        ngModel
+      />
       <div class="icon"><i class="fas fa-user"></i></div>
+      <p class="input-error">
+        <span *ngIf="email.invalid && email.touched">Please enter email !</span>
+      </p>
     </div>
     <div class="input_box">
-      <input name="username" type="name" placeholder="Name" required ngModel />
-      <div class="icon"><i class="fas fa-lock"></i></div>
+      <input
+        name="username"
+        type="name"
+        placeholder="Name"
+        #username="ngModel"
+        required
+        ngModel
+      />
+      <p class="input-error">
+        <span *ngIf="username.invalid && username.touched"
+          >Please enter username !</span
+        >
+      </p>
     </div>
     <div class="input_box">
       <input
         name="password"
         type="password"
         placeholder="Password"
+        #password="ngModel"
         required
         ngModel
       />
-      <div class="icon"><i class="fas fa-lock"></i></div>
+      <p class="input-error">
+        <span *ngIf="password.invalid && password.touched"
+          >Please enter password !</span
+        >
+      </p>
     </div>
     <div class="input_box">
       <input
         name="repeatPassword"
         type="password"
         placeholder="Repeat Password"
+        #rePassword="ngModel"
         required
         ngModel
       />
-      <div class="icon"><i class="fas fa-lock"></i></div>
+      <p class="input-error">
+        <span *ngIf="rePassword.invalid && rePassword.touched"
+          >Please confirm your password !</span
+        >
+      </p>
     </div>
     <div class="option_div">
       <div class="check_box">
@@ -35,6 +66,9 @@
         <span>Want to be a partner ?</span>
       </div>
     </div>
+    <h1 class="res-error" *ngIf="errorMessage">
+      <span>{{ errorMessage }}</span>
+    </h1>
     <div class="input_box button">
       <input type="submit" value="Register" />
     </div>

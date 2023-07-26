@@ -29,16 +29,9 @@ export class UserService {
   }
 
   userRegister(data: RegisterData) {
-    return this.http
-      .post('http://localhost:3030/users/register', data, {
-        observe: 'response',
-      })
-      .subscribe((result) => {
-        if (typeof result.body == 'object') {
-          localStorage.setItem('user', JSON.stringify(result.body));
-          this.router.navigate(['home']);
-        }
-      });
+    return this.http.post('http://localhost:3030/users/register', data, {
+      observe: 'response',
+    });
   }
 
   userLogin(data: LoginData) {
