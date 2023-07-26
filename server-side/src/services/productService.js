@@ -9,7 +9,6 @@ exports.getAll = async (ownerId,qsLimit) => {
   }
 
   if(qsLimit){
-    console.log(qsLimit);
     allProducts = allProducts.find().sort({_id: -1}).limit(qsLimit)
   }
   const result = await allProducts;

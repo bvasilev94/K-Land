@@ -7,9 +7,7 @@ router.post("/register", async (req, res) => {
     const result = await userSevrice.register(req.body);
 
     res.json(result);
-    console.log(req.body);
   } catch (error) {
-    console.log(error);
     res.status(400).json({ message: error.message });
   }
 });

@@ -10,6 +10,8 @@ import { AddProductData } from 'src/app/types/Product';
 export class HomeComponent implements OnInit {
   products: AddProductData[] | undefined;
   allProducts: AddProductData[] | undefined;
+  productData: undefined | AddProductData;
+  productQuantity: number = 1;
 
   constructor(private productService: ProductService) {}
 
@@ -21,5 +23,15 @@ export class HomeComponent implements OnInit {
     this.productService.getProducts().subscribe((data) => {
       this.allProducts = data;
     });
+  }
+
+  addToCart() {
+    if (this.productData) {
+      if (localStorage.getItem('user')) {
+      } else {
+        this.productData.quantity = this.productQuantity;
+        this.productService.addToCart(this.productData);
+      }
+    }
   }
 }
