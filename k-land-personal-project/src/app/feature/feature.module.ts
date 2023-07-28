@@ -11,6 +11,7 @@ import { MyProductsSellerComponent } from './my-products-seller/my-products-sell
 import { UpdateProductSellerComponent } from './update-product-seller/update-product-seller.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     UpdateProductSellerComponent,
     SearchResultComponent,
     ProductDetailsComponent,
+    CartComponent,
   ],
   imports: [
     CommonModule,
