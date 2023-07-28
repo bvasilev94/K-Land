@@ -12,6 +12,7 @@ import { AddProductData } from 'src/app/types/Product';
 export class SearchResultComponent implements OnInit {
   allProducts: AddProductData[] | undefined;
   foundProducts: AddProductData[] | undefined;
+  productData: undefined | AddProductData;
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -47,5 +48,12 @@ export class SearchResultComponent implements OnInit {
         });
       }
     });
+  }
+
+  addToCart(product: AddProductData) {
+    if (product) {
+      product.quantity = 1;
+      this.productService.addToCart(product);
+    }
   }
 }

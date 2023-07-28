@@ -38,11 +38,8 @@ export class ProductDetailsComponent implements OnInit {
 
   addToCart() {
     if (this.productData) {
-      if (localStorage.getItem('user')) {
-      } else {
-        this.productData.quantity = this.productQuantity;
-        this.productService.addToCart(this.productData);
-      }
+      this.productData.quantity = this.productQuantity;
+      this.productService.addToCart(this.productData);
     }
   }
 }
