@@ -8,5 +8,6 @@ export interface AddProductData {
   price: number;
   year: string;
   quantity: undefined | number
+  cartId: undefined | string
   _ownerId: string;
 }

@@ -32,8 +32,12 @@ export class HeaderComponent implements OnInit {
     }
 
     this.productService.cartEmmiter.subscribe((items) => {
-      this.cartItems = items.length
-    })
+      this.cartItems = items.length;
+    });
+
+    this.productService.removeFromCartEmmiter.subscribe((items) => {
+      this.cartItems = items.length;
+    });
   }
 
   searchProduct(query: KeyboardEvent) {

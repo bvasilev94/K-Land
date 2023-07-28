@@ -11,6 +11,8 @@ export class ProductService {
 
   cartEmmiter = new EventEmitter<AddProductData[]>();
 
+  removeFromCartEmmiter = new EventEmitter<AddProductData[]>();
+
   constructor(private http: HttpClient) {}
 
   addProduct(productData: AddProductData) {
@@ -44,6 +46,8 @@ export class ProductService {
   }
 
   addToCart(data: AddProductData) {
+    let cartId = Date();
+    data.cartId = cartId;
     let localCart = [];
     let productsData = localStorage.getItem('cart');
     if (!productsData) {
@@ -54,6 +58,28 @@ export class ProductService {
       localCart.push(data);
       localStorage.setItem('cart', JSON.stringify(localCart));
     }
+
     this.cartEmmiter.emit(localCart);
+  }
+
+  removeProduct(product: AddProductData, cartItems: AddProductData[]) {
+    let localCart = localStorage.getItem('cart');
+    let cart = [];
+    if (localCart) {
+      cart = JSON.parse(localCart);
+      cart = cart.filter((item: AddProductData) => {
+        return item.cartId !== product.cartId;
+      });
+    }
+
+    cartItems = cart;
+
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    if (cartItems.length < 1) {
+      localStorage.removeItem('cart');
+    }
+    this.removeFromCartEmmiter.emit(cartItems);
+
+    return cartItems;
   }
 }

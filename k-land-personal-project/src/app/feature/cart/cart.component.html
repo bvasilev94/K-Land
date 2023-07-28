@@ -1,5 +1,5 @@
 <h1>Shopping Cart</h1>
-<div class="cart-container">
+<div *ngIf="cartItems" class="cart-container">
   <div *ngFor="let product of cartItems" class="cart-item">
     <div class="item-info">
       <img class="item-image" src="{{ product.imageUrl }}" alt="" />
@@ -8,10 +8,13 @@
     </div>
     <div class="item-price">
       ${{ product.price }}
-      <button class="remove-button">X</button>
+      <button class="remove-button" (click)="removeProduct(product)">X</button>
     </div>
   </div>
   <!-- Add more cart items here as needed -->
   <div class="shipping">Shipping: $4.99</div>
-  <div class="total">Total: $50.00</div>
+  <div class="total">Total: ${{totalPrice}}</div>
+</div>
+<div *ngIf="!cartItems" class="cart-container">
+  <h1>Seem's like your cart is empty</h1>
 </div>
