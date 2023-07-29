@@ -1,7 +1,7 @@
 # K-Land
  This is a personal project created for Soft-Uni Angular Course, August 2023.
 # Back-End
-## Requirmenst
+## Requirments
  - MongoDB
  - NodeJs
  - The server is running with MongoDB,Mongose and Express. Navigate to /server-side directory and run 'npm i' in you IDE to install all dependencies.
