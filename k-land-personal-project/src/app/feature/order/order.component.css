@@ -1,0 +1,51 @@
+.orders-list {
+  max-width: 1000px;
+  margin: 30px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.order:last-child {
+  border-bottom: none;
+}
+
+.order-id {
+  font-weight: bold;
+}
+
+.order-status {
+  color: #ff9800; /* Orange color for "In Progress" status */
+}
+
+.order-amount {
+  color: #007bff;
+}
+
+.cancel-button {
+  font-family: cursive;
+  background-color: #dc3545; /* Red color for cancel button */
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}

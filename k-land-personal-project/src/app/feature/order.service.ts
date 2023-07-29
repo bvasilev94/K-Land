@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
-import { OrderData } from '../types/Orders';
+import { GetOrders, OrderData } from '../types/Orders';
 
 @Injectable({
   providedIn: 'root',
@@ -18,8 +18,12 @@ export class OrderService {
   }
 
   getOrdersForUser(userId: string) {
-    this.http.get(`${this.url}/${userId}`, {
+    return this.http.get<GetOrders[]>(`${this.url}/${userId}`, {
       observe: 'response',
     });
+  }
+
+  deleteOrder(orderId: String) {
+    return this.http.delete(`${this.url}/${orderId}`, { observe: 'response' });
   }
 }

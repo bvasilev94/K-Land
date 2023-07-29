@@ -15,7 +15,7 @@ router.post("/all-orders", async (req, res) => {
   }
 });
 
-router.get("/:userId", async (req, res) => {
+router.get("/all-orders/:userId", async (req, res) => {
   try {
     const orders = await orderService.getAllFromUser(req.params.userId);
     res.json(orders);
@@ -26,7 +26,7 @@ router.get("/:userId", async (req, res) => {
   }
 });
 
-router.delete("/:orderId", async (req, res) => {
+router.delete("/all-orders/:orderId", async (req, res) => {
   try {
     await orderService.deleteOrder(req.params.orderId);
 

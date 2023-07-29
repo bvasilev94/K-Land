@@ -12,6 +12,7 @@ import { UpdateProductSellerComponent } from './update-product-seller/update-pro
 import { SearchResultComponent } from './search-result/search-result.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { CartComponent } from './cart/cart.component';
     SearchResultComponent,
     ProductDetailsComponent,
     CartComponent,
+    OrderComponent,
   ],
   imports: [
     CommonModule,

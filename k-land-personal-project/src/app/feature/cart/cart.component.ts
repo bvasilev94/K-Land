@@ -69,7 +69,9 @@ export class CartComponent implements OnInit {
 
     this.orderService.createOrder(orderData).subscribe({
       next: (result) => {
-        console.log(result);
+        if (result.ok === true) {
+          localStorage.removeItem('cart');
+        }
       },
       error: (error) => {
         console.log(error.error.message);
