@@ -10,16 +10,6 @@
 },
 {
   "_id": {
-    "$oid": "64b6abafd8007a253df51fb5"
-  },
-  "email": "test@abv.bg",
-  "username": "test",
-  "password": "$2b$10$l8VDC3A2fI9cM7ye.JblLuTbN/ydgcelCHsndPkmM8aTGCrJja5va",
-  "seller": true,
-  "__v": 0
-},
-{
-  "_id": {
     "$oid": "64c5478820ba9eda4da0509c"
   },
   "email": "test2@abv.bg",
