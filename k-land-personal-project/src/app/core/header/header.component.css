@@ -3,6 +3,7 @@
   justify-content: space-between;
   background-color: #301e54;
   position: relative;
+  height: 66px;
 }
 
 .nav-bar .nav-logo a {
@@ -65,7 +66,7 @@
   list-style-type: none;
   margin-top: 3px;
   margin-right: 30px;
-  margin-bottom: 16px;
+  margin-bottom: 7px;
 }
 
 .nav-bar ul li {
@@ -99,8 +100,8 @@
 .dropbtn::after {
   content: "";
   position: absolute;
-  bottom: 13px; /* Adjust this value to position the arrow vertically */
-  right: -4px; /* Adjust this value to position the arrow horizontally */
+  bottom: 16px; /* Adjust this value to position the arrow vertically */
+  right: -1px; /* Adjust this value to position the arrow horizontally */
   width: 0;
   height: 0;
   border-left: 4px solid transparent;
@@ -118,6 +119,12 @@
   padding-bottom: 3px;
   font-size: 18px;
   border: none;
+}
+
+.user-name {
+  font-size: 18px;
+  font-weight: unset;
+  color: #ffb7c5;
 }
 
 /* The container <div> - needed to position the dropdown content */

@@ -122,3 +122,11 @@ a {
   background-color: #301e54;
   border-color: #301e54;
 }
+
+.my-pr{
+  font-size: 2.5rem;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  border-bottom: 1px solid black;
+}

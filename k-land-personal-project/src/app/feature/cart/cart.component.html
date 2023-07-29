@@ -20,25 +20,39 @@
       name="userEmail"
       class="form-input"
       placeholder="Email"
+      #email="ngModel"
       ngModel
       required
     />
+    <p class="input-error">
+      <span *ngIf="email.invalid && email.touched">Please enter email !</span>
+    </p>
     <input
       type="text"
       name="address"
       class="form-input"
       placeholder="Address"
+      #address="ngModel"
       ngModel
       required
     />
+    <p class="input-error">
+      <span *ngIf="address.invalid && address.touched">Please enter address !</span>
+    </p>
     <input
       type="tel"
       name="phoneNumber"
       class="form-input"
       placeholder="Phone Number"
+      #phone="ngModel"
       ngModel
       required
     />
+    <p class="input-error">
+      <span *ngIf="phone.invalid && phone.touched">Please enter phone number !</span>
+    </p>
+    <p class="order-m" *ngIf="orderMessage">{{orderMessage}}</p>
+    <p class="res-error" *ngIf="errorMessage">{{errorMessage}}</p>
     <button *ngIf="user" type="submit" class="order-button">Order</button>
     <a *ngIf="!user" routerLink="/login" class="order-button">Login</a>
   </form>

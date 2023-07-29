@@ -14,6 +14,7 @@ exports.getAll = async (ownerId,qsLimit) => {
 
   return result;
 };
+exports.create = (productData) => Product.create(productData)
 exports.getOne = (productId) => Product.findById(productId);
 exports.update = (productId, productData) =>
   Product.findByIdAndUpdate(productId, productData);

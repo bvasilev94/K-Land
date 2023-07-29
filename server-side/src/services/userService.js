@@ -3,30 +3,22 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 exports.register = async (userData) => {
-  try {
-    const user = await User.create(userData);
-    const result = createToken(user);
+  const user = await User.create(userData);
+  const result = createToken(user);
 
-    return result;
-  } catch (err) {
-    if (err.code == 11000) {
-      throw new Error("Email or Username already taken!");
-    } else {
-      throw new Error(err.message);
-    }
-  }
+  return result;
 };
 exports.login = async ({ email, password }) => {
   const user = await User.findOne({ email });
 
   if (!user) {
-    throw new Error("Invalid username or password");
+    throw new Error("Wrong username or password");
   }
 
   const isValid = await bcrypt.compare(password, user.password);
 
   if (!isValid) {
-    throw new Error("Invalid username or password");
+    throw new Error("Wrong username or password");
   }
 
   const result = createToken(user);

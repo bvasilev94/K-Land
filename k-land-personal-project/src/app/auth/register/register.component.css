@@ -82,7 +82,7 @@ form .option_div {
 .button input {
   padding-left: 0;
   background: #301e54;
-  color: #fff;
+  color: #ffb7c5;
   border: none;
   font-size: 20px;
   font-weight: 500;
@@ -91,7 +91,7 @@ form .option_div {
 }
 
 .button input:hover {
-  background: #301e90;
+  background: #301e75;
 }
 
 form .sign_up {

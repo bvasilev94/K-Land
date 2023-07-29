@@ -29,6 +29,7 @@
     </div>
     <div class="nav-menu">
       <ul class="user-menu">
+        <h1 *ngIf="getUserName" class="user-name">Welcome, {{ userName }}</h1>
         <li class="user-buttons" class="dropdown">
           <button class="dropbtn">Acount</button>
           <div *ngIf="!isLoggedIn" class="dropdown-content">
@@ -36,13 +37,12 @@
             <a routerLink="/register">Register</a>
           </div>
           <div *ngIf="isLoggedIn" class="dropdown-content">
-            <a routerLink="/profile">Profile</a>
+            <a routerLink="/my-orders">Orders</a>
             <a *ngIf="isSeller" routerLink="/add-product">Add Product</a>
             <a *ngIf="isSeller" routerLink="/my-products">My Products</a>
             <a class="logout-btn" (click)="logout()">Logout</a>
           </div>
         </li>
-        <li><a routerLink="/orders">Orders</a></li>
         <li>
           <a routerLink="/cart" class="cart" title="Cart">
             <img
@@ -50,7 +50,7 @@
               alt="Cart"
           /></a>
         </li>
-        <span>{{ cartItems }}</span>
+        <span *ngIf="!cartGetter">{{ cartItems }}</span>
       </ul>
     </div>
   </nav>

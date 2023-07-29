@@ -5,6 +5,7 @@ import { ProductService } from '../product.service';
 import { UserService } from 'src/app/auth/user.service';
 import { OrderData } from 'src/app/types/Orders';
 import { OrderService } from '../order.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -13,6 +14,8 @@ import { OrderService } from '../order.service';
 })
 export class CartComponent implements OnInit {
   cartItems: AddProductData[] | undefined;
+  orderMessage: string | undefined;
+  errorMessage: string | undefined;
   cartEmmiter = new EventEmitter<AddProductData[]>();
   totalPrice: number = 4.99;
   user: boolean = false;
@@ -20,7 +23,8 @@ export class CartComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private userService: UserService,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -71,10 +75,16 @@ export class CartComponent implements OnInit {
       next: (result) => {
         if (result.ok === true) {
           localStorage.removeItem('cart');
+          this.orderMessage = 'Thank You For Your Order';
+          setTimeout(() => {
+            this.orderMessage = undefined;
+            this.router.navigate(['/my-orders']);
+          }, 3000);
         }
       },
       error: (error) => {
-        console.log(error.error.message);
+        this.errorMessage = error.error.message;
+        console.log(this.errorMessage);
       },
     });
   }

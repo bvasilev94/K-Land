@@ -5,6 +5,7 @@ import { UserService } from 'src/app/auth/user.service';
 import { ProductService } from 'src/app/feature/product.service';
 import { AddProductData } from 'src/app/types/Product';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -14,6 +15,7 @@ export class HeaderComponent implements OnInit {
   allProducts: AddProductData[] | undefined;
   mathchingProducts: AddProductData[] | undefined;
   cartItems: number = 0;
+  userName: string | undefined;
 
   constructor(
     private userService: UserService,
@@ -38,6 +40,11 @@ export class HeaderComponent implements OnInit {
     this.productService.removeFromCartEmmiter.subscribe((items) => {
       this.cartItems = items.length;
     });
+  }
+
+  ngOnDestroy(){
+    this.productService.removeFromCartEmmiter.unsubscribe();
+    this.productService.cartEmmiter.unsubscribe();
   }
 
   searchProduct(query: KeyboardEvent) {
@@ -79,13 +86,32 @@ export class HeaderComponent implements OnInit {
     return this.userService.isLogged();
   }
 
+  get getUserName() {
+    let user = localStorage.getItem('user');
+    if (user) {
+      this.userName = JSON.parse(user).username;
+    }
+    return this.userName;
+  }
+
+  get cartGetter(){
+    let cart = localStorage.getItem('cart');
+    if (!cart) {
+      return this.cartItems = 0
+    } else {
+      return;
+    }
+  }
+
   get isSeller() {
     let data = this.userService.getUser();
     let user = data && JSON.parse(data);
     return user.seller;
   }
 
+  
   logout(): void {
+    this.userName = undefined;
     this.userService.userLogout();
     this.router.navigate(['/']);
   }

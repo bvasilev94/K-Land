@@ -1,6 +1,8 @@
 const router = require("express").Router();
 
 const productService = require("../services/productService.js");
+const {extractErrMessages} = require('../utils/errorsHandler.js')
+
 
 router.get("/catalog", async (req, res) => {
   try {
@@ -21,9 +23,8 @@ router.post("/catalog", async (req, res) => {
     await productService.create(productData);
     res.status(204).json({ message: "Product added successfuly!" });
   } catch (error) {
-    res.status(400).json({
-      message: "Cannot add product",
-    });
+    const errMessages = extractErrMessages(error)
+    res.status(404).json({ message: errMessages[0] });
   }
 });
 

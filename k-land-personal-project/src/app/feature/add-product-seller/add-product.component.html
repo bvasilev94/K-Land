@@ -3,14 +3,6 @@
   <p class="message-p">{{ addedTrue }}</p>
   <form #addForm="ngForm" (ngSubmit)="addProduct(addForm.value)" action="#">
     <div class="input_box">
-      <!-- <input
-        list="categories"
-        name="category"
-        type="text"
-        placeholder="Category"
-        required
-        ngModel
-      /> -->
       <select id="category" name="category" required ngModel>
         <option value="Clothing">Clothing</option>
         <option value="Accessories">Accessories</option>
@@ -24,9 +16,15 @@
         name="name"
         type="text"
         placeholder="Product Name"
+        #productName="ngModel"
         required
         ngModel
       />
+      <p class="input-error">
+        <span *ngIf="productName.invalid && productName.touched"
+          >Please enter product name !</span
+        >
+      </p>
       <div class="icon"><i class="fas fa-user"></i></div>
     </div>
     <div class="input_box">
@@ -34,29 +32,47 @@
         name="manufacturer"
         type="text"
         placeholder="Product Manufacturer"
+        #manufacturer="ngModel"
         required
         ngModel
       />
+      <p class="input-error">
+        <span *ngIf="manufacturer.invalid && manufacturer.touched"
+          >Please enter manufacturer !</span
+        >
+      </p>
       <div class="icon"><i class="fas fa-lock"></i></div>
     </div>
     <div class="input_box">
       <input
         name="price"
-        type="text"
+        type="number"
         placeholder="Product Price"
+        #price="ngModel"
         required
         ngModel
       />
+      <p class="input-error">
+        <span *ngIf="price.invalid && price.touched"
+          >Please enter price !</span
+        >
+      </p>
       <div class="icon"><i class="fas fa-lock"></i></div>
     </div>
     <div class="input_box">
       <input
         name="year"
-        type="text"
+        type="number"
         placeholder="Product Year"
+        #year="ngModel"
         required
         ngModel
       />
+      <p class="input-error">
+        <span *ngIf="year.invalid && year.touched"
+          >Please enter year !</span
+        >
+      </p>
       <div class="icon"><i class="fas fa-lock"></i></div>
     </div>
     <div class="input_box">
@@ -64,9 +80,15 @@
         name="description"
         type="text"
         placeholder="Product Description"
+        #description="ngModel"
         required
         ngModel
       ></textarea>
+      <p class="input-error">
+        <span *ngIf="description.invalid && description.touched"
+          >Please enter description !</span
+        >
+      </p>
       <div class="icon"><i class="fas fa-lock"></i></div>
     </div>
     <div class="input_box">
@@ -74,13 +96,22 @@
         name="imageUrl"
         type="text"
         placeholder="Product Image URL"
+        #imageUrl="ngModel"
         required
         ngModel
       />
+      <p class="input-error">
+        <span *ngIf="imageUrl.invalid && imageUrl.touched"
+          >Please enter username !</span
+        >
+      </p>
       <div class="icon"><i class="fas fa-lock"></i></div>
     </div>
+    <h1 class="res-error" *ngIf="errorMessage">
+      <span>{{ errorMessage }}</span>
+    </h1>
     <div class="input_box button">
-      <input type="submit" value="Add" />
+      <input type="submit" value="Add Product" />
     </div>
   </form>
 </div>

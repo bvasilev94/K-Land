@@ -13,15 +13,16 @@ const ordersSchema = new mongoose.Schema({
   },
   userEmail: {
     type: String,
-    required: true
+    required: [true, "Email is required"],
+    minLength: [8, "Email must be at least 10 characters long"],
   },
   address: {
     type: String,
-    required: true
+    required: [true, "Enter valid shipping address"],
   },
   phoneNumber: {
     type: Number,
-    required: true
+    required: [true, "Please enter phone number!"],
   },
   _ownerId: {
     type: mongoose.Types.ObjectId,

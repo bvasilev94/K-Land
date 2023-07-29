@@ -1,17 +1,16 @@
 const router = require("express").Router();
 
 const orderService = require("../services/orderService.js");
+const {extractErrMessages} = require('../utils/errorsHandler.js')
+
 
 router.post("/all-orders", async (req, res) => {
   try {
-    console.log(req.body);
     await orderService.create(req.body);
     res.status(204).json({ message: "Product added successfuly!" });
   } catch (error) {
-    console.log(error);
-    res.status(400).json({
-      message: "Oops something went wrong !",
-    });
+    const errMessages = extractErrMessages(error)
+    res.status(404).json({ message: errMessages[0] });
   }
 });
 

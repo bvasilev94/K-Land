@@ -50,7 +50,7 @@ form .input_box {
 }
 
 .input_box input:focus {
-  border-color: #be2edd;
+  border-color: #301e54;
 }
 
 .input_box .icon {
@@ -78,15 +78,10 @@ form .option_div {
   color: #333;
 }
 
-.option_div .forget_div a {
-  font-size: 16px;
-  color: #be2edd;
-}
-
 .button input {
   padding-left: 0;
-  background: #be2edd;
-  color: #fff;
+  background: #301e54;
+  color: #ffb7c5;
   border: none;
   font-size: 20px;
   font-weight: 500;
@@ -95,7 +90,7 @@ form .option_div {
 }
 
 .button input:hover {
-  background: #a720c5;
+  background: #301e75;
 }
 
 form .sign_up {
@@ -104,7 +99,7 @@ form .sign_up {
 }
 
 .sign_up a {
-  color: #be2edd;
+  color: #ffb7c5;
 }
 
 form a {

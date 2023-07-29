@@ -62,8 +62,8 @@ h1 {
   flex-direction: column;
   margin-top: 20px;
 }
+
 .form-input {
-  margin-bottom: 10px;
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -82,4 +82,27 @@ h1 {
 }
 .order-button:hover {
   background-color: #301e75;
+}
+
+.input-error {
+  color: red;
+  font-size: 12px;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.res-error {
+  align-self: center;
+  text-align: left;
+  color: red;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.order-m {
+  align-self: center;
+  text-align: left;
+  color: green;
+  font-size: 20px;
+  margin-top: 20px;
 }
