@@ -29,8 +29,8 @@ router.post("/catalog", async (req, res) => {
 
 router.get("/catalog/:productId", async (req, res) => {
   try {
-    const furniture = await productService.getOne(req.params.productId);
-    res.json(furniture);
+    const product = await productService.getOne(req.params.productId);
+    res.json(product);
   } catch (error) {
     res.status(400).json({
       message: "Oops something went wrong",
