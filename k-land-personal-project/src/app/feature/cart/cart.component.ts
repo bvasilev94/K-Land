@@ -3,6 +3,8 @@ import { Component, EventEmitter, OnInit } from '@angular/core';
 import { AddProductData } from 'src/app/types/Product';
 import { ProductService } from '../product.service';
 import { UserService } from 'src/app/auth/user.service';
+import { OrderData } from 'src/app/types/Orders';
+import { OrderService } from '../order.service';
 
 @Component({
   selector: 'app-cart',
@@ -13,12 +15,13 @@ export class CartComponent implements OnInit {
   cartItems: AddProductData[] | undefined;
   cartEmmiter = new EventEmitter<AddProductData[]>();
   totalPrice: number = 4.99;
-  shipping: number = 4.99;
   user: boolean = false;
 
-  constructor(private productService: ProductService, private userService: UserService) {}
-
-  
+  constructor(
+    private productService: ProductService,
+    private userService: UserService,
+    private orderService: OrderService
+  ) {}
 
   ngOnInit(): void {
     let currCart = localStorage.getItem('cart');
@@ -45,5 +48,32 @@ export class CartComponent implements OnInit {
     if (this.cartItems && this.cartItems.length < 1) {
       this.cartItems = undefined;
     }
+  }
+
+  sentOrder(data: { userEmail: string; adress: string; phoneNumber: number }) {
+    let _ownerId = this.userService.getUserId();
+    let products: string[] = [];
+    let totalPrice = this.totalPrice;
+    if (this.cartItems) {
+      this.cartItems.forEach((item) => {
+        products.push(item._id);
+      });
+    }
+
+    let orderData: OrderData = {
+      ...data,
+      products,
+      totalPrice,
+      _ownerId,
+    };
+
+    this.orderService.createOrder(orderData).subscribe({
+      next: (result) => {
+        console.log(result);
+      },
+      error: (error) => {
+        console.log(error.error.message);
+      },
+    });
   }
 }

@@ -14,12 +14,13 @@
   <!-- Add more cart items here as needed -->
   <div class="shipping">Shipping: $4.99</div>
   <div class="total">Total: ${{ totalPrice }}</div>
-  <form class="order-form">
+  <form #orderForm="ngForm" (ngSubmit)="sentOrder(orderForm.value)" class="order-form">
     <input
       type="email"
-      name="email"
+      name="userEmail"
       class="form-input"
       placeholder="Email"
+      ngModel
       required
     />
     <input
@@ -27,13 +28,15 @@
       name="address"
       class="form-input"
       placeholder="Address"
+      ngModel
       required
     />
     <input
       type="tel"
-      name="phone"
+      name="phoneNumber"
       class="form-input"
       placeholder="Phone Number"
+      ngModel
       required
     />
     <button *ngIf="user" type="submit" class="order-button">Order</button>
