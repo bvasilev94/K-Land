@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "64afd3293f000de7ae1c729f"
+  },
+  "email": "seller@test.bg",
+  "username": "seller",
+  "password": "$2b$10$kHOTrt0.MekJ7xkRelar8.tzPZDaObVrO7E9aBfGIi5WiMiI4adiq",
+  "seller": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6abafd8007a253df51fb5"
+  },
+  "email": "test@abv.bg",
+  "username": "test",
+  "password": "$2b$10$l8VDC3A2fI9cM7ye.JblLuTbN/ydgcelCHsndPkmM8aTGCrJja5va",
+  "seller": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c5478820ba9eda4da0509c"
+  },
+  "email": "test2@abv.bg",
+  "username": "test2",
+  "password": "$2b$10$1reEEUCQFkaEVAhFg85qGeyrXdnYK5FeTvmtlMOXDJz1dhlypz0uK",
+  "seller": false,
+  "__v": 0
+}]
