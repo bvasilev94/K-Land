@@ -1,6 +1,5 @@
 const Product = require("../models/Product.js");
 
-exports.create = (productData) => Product.create(productData);
 exports.getAll = async (ownerId,qsLimit) => {
   let allProducts = Product.find();
 
