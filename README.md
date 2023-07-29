@@ -14,7 +14,6 @@
 # You can check the aplication on http://localhost:4200/
  ## There are 3 preloaded users: 
  - seller@test.bg / password: 123456,
- - test@abv.bg / password: 123456,
  - test2@abv.bg / password: 123456,
 
  ## You can create new users.You can create seller account by checking the 'Want to be a partner' checkbox on the register page.
