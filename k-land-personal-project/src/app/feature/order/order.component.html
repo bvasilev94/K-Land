@@ -3,7 +3,6 @@
   <ul>
     <li *ngFor="let order of ordersData" class="order">
       <span class="order-id">Order:  #{{order._id}}</span>
-      <span class="order-date">Date: 2023-07-29</span>
       <span class="order-status">In Progress</span>
       <span class="order-amount">${{order.totalPrice}}</span>
       <button (click)="cancelOrder(order._id)" class="cancel-button">Cancel Order</button>
