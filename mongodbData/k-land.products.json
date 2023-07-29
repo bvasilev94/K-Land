@@ -1,0 +1,128 @@
+[{
+  "_id": {
+    "$oid": "64b4ff998e2c872ee985addf"
+  },
+  "category": "Clothing",
+  "name": "Kimono",
+  "manufacturer": "J-Land",
+  "price": 569.99,
+  "year": "2013",
+  "description": "Check out our navy blue kimono selection for the very best in unique or custom, handmade pieces from our women's clothing shops.",
+  "imageUrl": "https://i.etsystatic.com/21347872/r/il/1cc517/3495116126/il_fullxfull.3495116126_co4w.jpg",
+  "_ownerId": {
+    "$oid": "64afd3293f000de7ae1c729f"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b704ae3c444ab33720869b"
+  },
+  "category": "Other",
+  "name": "Katana",
+  "manufacturer": "J-Land",
+  "price": 2999.99,
+  "year": "1960",
+  "description": "Katana",
+  "imageUrl": "https://image.invaluable.com/housePhotos/Frank_Peege/09/744409/H4114-L324411718.jpg",
+  "_ownerId": {
+    "$oid": "64afd3293f000de7ae1c729f"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b9980d739ff9c4bf856ee7"
+  },
+  "category": "Food",
+  "name": "JAPANESE RAMEN KIT",
+  "manufacturer": "MR CHEN'S",
+  "price": 5.99,
+  "year": "2023",
+  "description": "“Say hello to an irresistible ramen, made easy. Just like my authentic dumplings range in the freezer, my signature Japanese Ramen recipe takes traditional Asian flavours and makes them effortless to enjoy at home. With my rich shoyu broth and soft, silky noodles ready to go, all that’s left to do is add meat, veggies and classic hard boiled eggs for a ramen worth raving about. Thanks for inviting me to dinner at your house”.",
+  "imageUrl": "https://images.squarespace-cdn.com/content/v1/5897a9dd46c3c4ce343fbe47/1590900654928-D069SOLAJMLT9DL1JO1K/JapaneseRamenKit-OL.png",
+  "_ownerId": {
+    "$oid": "64afd3293f000de7ae1c729f"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b998d1f605c374608949ab"
+  },
+  "category": "Accessories",
+  "name": "Triangle Logo Techwear Japanese Streetwear Baseball Cap",
+  "manufacturer": "Fabric of the Universe",
+  "price": 74.99,
+  "year": 2015,
+  "description": "Fabric of the Universe Tech Triangle Logo structured baseball cap in black twill. Complete your techwear look with this unique headgear that will complement any style.",
+  "imageUrl": "https://m.media-amazon.com/images/I/71-rRoOElcL._AC_UX569_.jpg",
+  "_ownerId": {
+    "$oid": "64afd3293f000de7ae1c729f"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ba93d110c50a58f5953cf2"
+  },
+  "category": "Accessories",
+  "name": "GIYUU TOMIOKA DEMON SLAYER'S KATANA",
+  "manufacturer": "Titano",
+  "price": 69.99,
+  "year": "2022",
+  "description": "Ornamental Katana inspired by the character GIYUU TOMIOKA from the anime series KIMETSU NO YAIBA (DEMON SLAYER).\n\nSteel blade\nSheath and wooden handle\nMetal tsuba\n\nFeatures:\n\nTotal length: 960mm\nTotal length with scabbard: 1030mm\nBlade length: 680mm\nWeight: 670g\nWeight with sheath: 900g",
+  "imageUrl": "https://www.titano-store.com/inc/scripts/thumb.php?bg=ffffff&w=530&h=530&img=http%3A%2F%2Fadmin.abc.sm%2Fupload%2F5051%2Fcatalogodinamico%2Fprodotti%2Fimg_994491_170538ZS654.jpg",
+  "_ownerId": {
+    "$oid": "64afd3293f000de7ae1c729f"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64bac3a510c50a58f5953e0b"
+  },
+  "category": "Accessories",
+  "name": "KATANA ZENITSU AGATSUMA DEMON SLAYER",
+  "manufacturer": "Titano",
+  "price": 39.99,
+  "year": "2023",
+  "description": "Ornamental Katana inspired by the character ZENITSU AGATSUMA from the anime series KIMETSU NO YAIBA (DEMON SLAYER).\n\nSteel blade\nSheath and wooden handle\nMetal tsuba\n\nFeatures:\n\nTotal length: 965mm\nTotal length with scabbard: 10350mm\nBlade length: 680mm\nWeight: 670g\nWeight with sheath: 880g\n\nNOT SHARP AND NOT POINTED BLADE, FOR ORNAMENTAL PURPOSES ONLY",
+  "imageUrl": "https://www.titano-store.com/inc/scripts/thumb.php?bg=ffffff&w=530&h=530&img=http%3A%2F%2Fadmin.abc.sm%2Fupload%2F5051%2Fcatalogodinamico%2Fprodotti%2Fimport_934779_KATANA_ZENITSU_AGATSUMA_DEMON_SLAYER_KIMETSU_NO_YAIBA_ZS653_1_0.jpg",
+  "_ownerId": {
+    "$oid": "64afd3293f000de7ae1c729f"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c3de02e199264e8e0fcd09"
+  },
+  "category": "Accessories",
+  "name": "Evil Japanese Fox Mask",
+  "manufacturer": "Japan-Avenue",
+  "price": 39.99,
+  "year": "2013",
+  "description": "Japanese mask for festivals, Cosplay events and parties (Carnival, Halloween...). For a total Japanese look, this evil Japanese fox mask can be worn with a kimono or a yukata. It can also be used for home decoration.",
+  "imageUrl": "https://japan-avenue.com/cdn/shop/products/evil-japanese-fox-mask-994_2000x.jpg?v=1666905074",
+  "_ownerId": {
+    "$oid": "64afd3293f000de7ae1c729f"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64c52a60bd270c4e7a352500"
+  },
+  "category": "Accessories",
+  "name": "Wooden Kanzashi - Black Flower",
+  "manufacturer": "Kanzashi",
+  "price": 74.99,
+  "year": 2023,
+  "description": "This wavy rosewood Japanese hair pick is a true jewel for enhancing your hairstyles. Its smooth texture and delicate curves offer a pleasant grip, while its rosewood adds a touch of natural elegance to your look.",
+  "imageUrl": "https://japan-avenue.com/cdn/shop/products/kanzashi-en-bois-fleur-noire-358_2000x.jpg?v=1685080509",
+  "_ownerId": {
+    "$oid": "64afd3293f000de7ae1c729f"
+  },
+  "__v": 0
+}]
