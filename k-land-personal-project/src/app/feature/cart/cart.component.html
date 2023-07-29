@@ -13,7 +13,32 @@
   </div>
   <!-- Add more cart items here as needed -->
   <div class="shipping">Shipping: $4.99</div>
-  <div class="total">Total: ${{totalPrice}}</div>
+  <div class="total">Total: ${{ totalPrice }}</div>
+  <form class="order-form">
+    <input
+      type="email"
+      name="email"
+      class="form-input"
+      placeholder="Email"
+      required
+    />
+    <input
+      type="text"
+      name="address"
+      class="form-input"
+      placeholder="Address"
+      required
+    />
+    <input
+      type="tel"
+      name="phone"
+      class="form-input"
+      placeholder="Phone Number"
+      required
+    />
+    <button *ngIf="user" type="submit" class="order-button">Order</button>
+    <a *ngIf="!user" routerLink="/login" class="order-button">Login</a>
+  </form>
 </div>
 <div *ngIf="!cartItems" class="cart-container">
   <h1>Seem's like your cart is empty</h1>

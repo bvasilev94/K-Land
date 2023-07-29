@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit } from '@angular/core';
 
 import { AddProductData } from 'src/app/types/Product';
 import { ProductService } from '../product.service';
+import { UserService } from 'src/app/auth/user.service';
 
 @Component({
   selector: 'app-cart',
@@ -13,8 +14,11 @@ export class CartComponent implements OnInit {
   cartEmmiter = new EventEmitter<AddProductData[]>();
   totalPrice: number = 4.99;
   shipping: number = 4.99;
+  user: boolean = false;
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private userService: UserService) {}
+
+  
 
   ngOnInit(): void {
     let currCart = localStorage.getItem('cart');
@@ -25,6 +29,7 @@ export class CartComponent implements OnInit {
       });
     }
     this.totalPrice = Number(this.totalPrice.toFixed(2));
+    this.user = this.userService.isLogged();
   }
 
   removeProduct(product: AddProductData) {
