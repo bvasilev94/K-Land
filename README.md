@@ -4,7 +4,7 @@
 ## Requirmenst
  - MongoDB
  - NodeJs
- - The server is running with MongoDB and Mongose. Navigate to /server-side directory and run 'npm i' in you IDE to install all dependencies.
+ - The server is running with MongoDB,Mongose and Express. Navigate to /server-side directory and run 'npm i' in you IDE to install all dependencies.
 - Run npm start to start and create the back-end side of the project.
 - For best example please import the files, from mongodbData folder using MongoDB Compass in their collections, before starting the front-end.
 # Front-End
