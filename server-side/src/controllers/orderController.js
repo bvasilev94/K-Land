@@ -14,7 +14,8 @@ router.post("/all-orders", async (req, res) => {
     });
   }
 });
-router.get('/:userId', async (req,res) => {
+
+router.get("/:userId", async (req, res) => {
   try {
     const orders = await orderService.getAllFromUser(req.params.userId);
     res.json(orders);
@@ -23,6 +24,18 @@ router.get('/:userId', async (req,res) => {
       message: "Oops something went wrong",
     });
   }
-})
+});
+
+router.delete("/:orderId", async (req, res) => {
+  try {
+    await orderService.deleteOrder(req.params.orderId);
+
+    res.status(204).end();
+  } catch (error) {
+    res.status(400).json({
+      message: "Oops something went wrong",
+    });
+  }
+});
 
 module.exports = router;
